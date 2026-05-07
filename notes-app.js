@@ -12,7 +12,7 @@
 
         btn.addEventListener('click',()=>
         {
-            pop.style.display="block"
+            pop.style.display="flex"
         }
         )
 
