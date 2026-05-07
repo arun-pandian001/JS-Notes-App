@@ -1,31 +1,30 @@
-        <!DOCTYPE html>
-        <html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App - Professional</title>
+    <link rel="stylesheet" href="notes-app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h2 id="title"><a>Books</a>pen</h2>
 
-        <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <h2 id="title"><a>Books</a>pen</h2>
+    <div id="ans"></div>
 
-        <title></title>
-        </head> <link rel="stylesheet" href="notes-app.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <body>
-        <div id="ans">  </div>
-        <div id="dates">
-            
+    <button id="btn">+</button>
+
+    <div id="popup">
+        <input type="text" placeholder="Enter author" id="name">
+        <input type="text" placeholder="Context" id="context">
+        <div class="btn-group">
+            <button id="enter">Enter</button>
+            <button id="remove">Remove</button>
         </div>
+    </div>
 
-            <button id="btn" >+</button>
-        <div id="popup">
-            <input type="text" placeholder="Enter author " id="name">
-            <input type="text" placeholder="Context" id="context">
-                <div class="btn-group">
-            <button id="enter">enter</button>
-            <button id="remove">remove</button> </div>
-        </div>
-        <div id="show"> </div>
-        <script src="notes-app.js"></script>
-        </body>
-        </html>
+    <script src="notes-app.js"></script>
+</body>
+</html>
