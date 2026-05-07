@@ -1,70 +1,74 @@
-var arr = JSON.parse(localStorage.getItem("Notes")) || []; // LocalStorage check
-var a = document.getElementById('ans');
-var nam = document.getElementById('name');
-var con = document.getElementById('context');
-var rem = document.getElementById('remove');
-var pop = document.getElementById('popup');
-var ent = document.getElementById('enter');
-var btn = document.getElementById('btn');
+let notesArray = JSON.parse(localStorage.getItem("Notes")) || [];
 
-// Show Popup
-btn.addEventListener('click', () => {
-    pop.style.display = "flex"; // 'flex' use panna dhaan center aagum
+const ansContainer = document.getElementById('ans');
+const nameInput = document.getElementById('name');
+const contextInput = document.getElementById('context');
+const popup = document.getElementById('popup');
+const addBtn = document.getElementById('btn');
+const enterBtn = document.getElementById('enter');
+const removeBtn = document.getElementById('remove');
+
+// Open Popup
+addBtn.addEventListener('click', () => {
+    popup.style.display = "flex";
 });
 
 // Close Popup
-rem.addEventListener('click', () => {
-    pop.style.display = "none";
-    nam.value = "";
-    con.value = "";
+removeBtn.addEventListener('click', () => {
+    popup.style.display = "none";
+    clearInputs();
 });
 
-// Enter Logic
-ent.addEventListener('click', () => {
-    if (nam.value == "" || con.value == "") {
-        alert("INVALID DATA'S");
-    } else {
-        notemake(nam.value, con.value);
+// Add Note
+enterBtn.addEventListener('click', () => {
+    const author = nameInput.value.trim();
+    const context = contextInput.value.trim();
+
+    if (author === "" || context === "") {
+        alert("Please enter both Author and Context");
+        return;
     }
+
+    createNoteElement(author, context);
+    
+    // Save to Array and LocalStorage
+    notesArray.push({ author, context });
+    localStorage.setItem("Notes", JSON.stringify(notesArray));
+    
+    popup.style.display = "none";
+    clearInputs();
 });
 
-function notemake(N, C) {
-    pop.style.display = "none";
-    var space = document.createElement('div');
-    space.setAttribute("id", "container");
-    space.innerHTML = <h3>${N}</h3> <p>${C}</p>
-    <button class='clr'>clear</button>;
-    a.appendChild(space);
+function createNoteElement(N, C) {
+    const card = document.createElement('div');
+    card.setAttribute("id", "container");
+    card.innerHTML = 
+        <h3>${N}</h3>
+        <p>${C}</p>
+        <button class="clr">Clear</button>
+    ;
+    
+    ansContainer.appendChild(card);
 
-    // Initial load-la duplicate aagama irukka check
-    if (!arr.includes(N) || !arr.includes(C)) {
-        arr.push(N, C);
-        localStorage.setItem("Notes", JSON.stringify(arr));
-    }
-
-    let cl = space.querySelector('.clr');
-    cl.addEventListener('click', () => {
-        space.remove();
-        arrclear(N);
+    card.querySelector('.clr').addEventListener('click', () => {
+        card.remove();
+        deleteNoteData(N, C);
     });
-
-    nam.value = "";
-    con.value = "";
 }
 
-function arrclear(N) {
-    var index = arr.indexOf(N);
-    if (index > -1) {
-        arr.splice(index, 2);
-        localStorage.setItem("Notes", JSON.stringify(arr));
-    }
+function deleteNoteData(N, C) {
+    notesArray = notesArray.filter(note => !(note.author === N && note.context === C));
+    localStorage.setItem("Notes", JSON.stringify(notesArray));
 }
 
-// Window Load
+function clearInputs() {
+    nameInput.value = "";
+    contextInput.value = "";
+}
+
+// Load existing notes on start
 window.onload = () => {
-    if (arr.length > 0) {
-        for (let i = 0; i < arr.length; i += 2) {
-            notemake(arr[i], arr[i + 1]);
-        }
-    }
+    notesArray.forEach(note => {
+        createNoteElement(note.author, note.context);
+    });
 };
