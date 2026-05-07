@@ -1,4 +1,32 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
 
+body {
+    background: linear-gradient(to top left, black, darkblue);
+    background-size: cover;
+    min-height: 100vh;
+}
+
+#title {
+    color: white;
+    background: linear-gradient(to left, purple, black);
+    padding: 10px;
+}
+
+#ans {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Popup Logic - Fixed Brackets */
 #popup {
     background: linear-gradient(to top right, black 50%, darkgrey);
     position: fixed;
@@ -6,10 +34,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    display: none; 
+    display: none; /* JS moolama 'flex' nu mathumbodhu center aagum */
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     z-index: 2000;
 }
 
@@ -18,98 +46,91 @@
     border: 3px double red;
     background-color: transparent;
     font-size: 18px;
-    height: 40px;
-    width: 85%; 
-    margin-bottom: 20px; 
-    padding: 5px 10px;
+    height: 45px;
+    width: 85%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
 }
 
 #context {
     border-color: mediumvioletred;
-    height: 60px;
+    height: 100px;
 }
-
 
 .btn-group {
     display: flex;
     gap: 20px;
     width: 85%;
+    max-width: 400px;
     justify-content: center;
 }
 
 #enter, #remove {
-    width: 120px;
+    flex: 1;
     padding: 12px;
     border: none;
     border-radius: 8px;
     color: white;
     cursor: pointer;
-    position: static; 
+    font-weight: bold;
+}
 
 #enter { background-color: green; }
 #remove { background-color: red; }
-#container{ margin-top: 14px; background-color: black; color: white; width: auto; height: auto; border-radius:16px; display: inline-block; padding: 10px; transition: 1s; }
-#container:hover{ transform: scale(0.95); transition: 0.2s; } h3{color:red; margin-left: px; font-size: 25px; } p{margin: 10px; color: white; font-size: 17px; } button{ background-color:red; border-radius: 15% ; padding: 5px; border: none; margin-left: 5px; margin-bottom: 8px; }
-#title{ color:white; background: linear-gradient(to left,purple,black); padding:10px; } 
-#ans{ display: flex; flex-wrap: wrap; align-items: flex-start; gap: 3px; margin-left: 10px; margin-right: 10px; }
-a{color: red; font-size: 25px; } *{ margin: 0px; } body{ background: linear-gradient(to top left, black,darkblue) ; background-size: cover; height: 100vh; } *{ font-family: "Poppins", sans-serif; font-weight: 400; font-style: normal; }
-#btn:hover{ transform: scale(1.5); transition: 0.2s;  }/* --- Floating Action Button Update --- */
+
+/* Note Container */
+#container {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    width: 250px;
+    border-radius: 16px;
+    padding: 15px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+#container:hover { transform: scale(1.05); }
+
+h3 { color: red; font-size: 22px; margin-bottom: 5px; }
+p { color: white; font-size: 15px; margin-bottom: 10px; }
+
+.clr {
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Floating Button */
 #btn {
     background-color: hotpink;
-    border-radius: 50%; 
+    border-radius: 50%;
     width: 60px;
     height: 60px;
-    position: fixed;   
-    bottom: 30px;       
-    right: 30px;       
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
     font-size: 30px;
     color: white;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4); 
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    transition: 0.3s;
 }
 
-#btn:hover {
-    transform: scale(1.2);
-    transition: 0.2s;
-}
+#btn:hover { transform: scale(1.2); }
 
-/* --- Media Queries for Mobile (Responsiveness) --- */
+/* --- Media Queries for Mobile --- */
 @media screen and (max-width: 600px) {
-    #title {
-        font-size: 18px;
-        text-align: center;
-    }
-
-    #name, #context {
-        width: 90%;
-        left: 5%;
-        top: 200px; 
-    }
-
-    #enter, #remove {
-        top: 230px;
-        width: 40%;
-        margin: 5px;
-    }
-
-    #ans {
-        justify-content: center; 
-    }
-
-  
-    #btn {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 25px;
-    }
+    #ans { justify-content: center; }
+    #container { width: 90%; }
+    #btn { width: 55px; height: 55px; bottom: 20px; right: 20px; }
 }
-
-
