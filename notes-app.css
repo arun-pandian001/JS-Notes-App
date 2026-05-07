@@ -1,49 +1,62 @@
 
         #btn{
-        position:relative;
-        left: 250px;
-        top: 500px;
-        width: 60px;
-        height: 60px;
-        border-radius:50px;
-        padding: 5px;
-        background-color:hotpink;
-        position:fixed;
-        
-        }
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
 
-        #popup{
-        background: linear-gradient(to top right ,black 50%,darkgrey  );
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display :none;
-        }
-        #name{
-        color: skyblue;
-        position: relative;
-        border:  5px double red;
-        background-color: transparent;
-        top: 260px;
-        font-size:18px;
-        height: 25px;
-        width: 95%;
-        left:2px;
-        }
-        #context{
-        color: deepskyblue;
-        font-size: 20px;
-        background-color: transparent;
-            position: relative;
-        border:  5px double mediumvioletred;
-        top: 280px;
-        height: 48px;
-        width: 95%;
-        left:2px;
-        }
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 
+    background-color: hotpink;
+    border: none;
+    font-size: 30px;
+}
+
+       #popup{
+    background: linear-gradient(to top right, black 50%, darkgrey);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 20px;
+}        
+#name{
+    width: 85%;
+    max-width: 400px;
+
+    height: 45px;
+    font-size: 18px;
+
+    border: 5px double red;
+    background-color: transparent;
+    color: skyblue;
+
+    padding-left: 10px;
+}
+     #context{
+    width: 85%;
+    max-width: 400px;
+
+    height: 80px;
+    font-size: 18px;
+
+    border: 5px double mediumvioletred;
+    background-color: transparent;
+    color: deepskyblue;
+
+    padding-left: 10px;
+}
         #name,#context:focus{outline:none;}
         #remove{
             position:relative;
@@ -132,3 +145,18 @@
         font-weight: 400;
         font-style: normal;
         }
+@media (max-width: 600px){
+
+    #container{
+        width: 100%;
+    }
+
+    h3{
+        font-size: 20px;
+    }
+
+    p{
+        font-size: 15px;
+    }
+
+}
