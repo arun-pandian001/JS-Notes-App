@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-
+#container:hover{ transform:scale(1.1)}
 body {
     background: linear-gradient(to top left, #000000, #00008b);
     min-height: 100vh;
@@ -75,7 +75,7 @@ body {
     max-width: 400px;
     margin-bottom: 20px;
     font-size: 18px;
-    outline: none;
+    outline: none; border-style:double;
 }
 
 #context { border-color: mediumvioletred; height: 100px; }
@@ -111,8 +111,8 @@ body {
     height:auto;
 }
 
-#container h3 { color: red; margin-bottom: 8px; }
-#container p { font-size: 15px; margin-bottom: 12px; }
+#container h3 { color: red; margin-bottom: 8px; font-size:20px }
+#container p { font-size: 18px; margin-bottom: 12px; }
 
 .clr {
     background: red;
