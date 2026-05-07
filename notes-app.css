@@ -8,4 +8,4 @@
 #title{ color:white; background: linear-gradient(to left,purple,black); padding:10px; } 
 #ans{ display: flex; flex-wrap: wrap; align-items: flex-start; gap: 3px; margin-left: 10px; margin-right: 10px; }
 a{color: red; font-size: 25px; } *{ margin: 0px; } body{ background: linear-gradient(to top left, black,darkblue) ; background-size: cover; height: 100vh; } *{ font-family: "Poppins", sans-serif; font-weight: 400; font-style: normal; }
-#btn{ background-color:hotpink; boreder-radius:60px; position:relative; top:500px; width:60px;height:60px;position:fixed;padding:5px}
+#btn{ background-color:hotpink; boreder-radius:60px; position:relative; top:500px; width:60px;height:60px;position:fixed;padding:5px;left:250px;font-size:20px}
