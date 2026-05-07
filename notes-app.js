@@ -35,7 +35,7 @@
         })
         function notemake(N,C){
         
-        pop.style.display="block"
+        pop.style.display="none"
         var space=document.createElement('div')
         space.setAttribute("id","container")
         space.innerHTML=`<h3>${N}</h3> <p>${C}</p>
