@@ -106,8 +106,9 @@ body {
     border: 1px solid #333;
     border-radius: 12px;
     padding: 15px;
-    width: 280px;
+    width: auto;
     transition: 0.3s;
+    height:auto;
 }
 
 #container h3 { color: red; margin-bottom: 8px; }
