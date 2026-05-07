@@ -1,4 +1,3 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,64 +6,85 @@
 }
 
 body {
-    background: linear-gradient(to top left, black, darkblue);
-    background-size: cover;
+    background: linear-gradient(to top left, #000000, #00008b);
     min-height: 100vh;
+    color: white;
 }
 
 #title {
-    color: white;
     background: linear-gradient(to left, purple, black);
-    padding: 10px;
+    padding: 15px;
+    font-size: 24px;
 }
 
+#title a { color: red; text-decoration: none; }
+
+/* Main Notes Area */
 #ans {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 15px;
+    gap: 20px;
     padding: 20px;
+    justify-content: center;
 }
 
-/* Popup Logic - Fixed Brackets */
+/* Floating Action Button */
+#btn {
+    background-color: hotpink;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.5);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+#btn:hover { transform: scale(1.1); }
+
+/* Popup Overlay */
 #popup {
-    background: linear-gradient(to top right, black 50%, darkgrey);
+    background: rgba(0, 0, 0, 0.9);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: none; /* JS moolama 'flex' nu mathumbodhu center aagum */
+    display: none; /* JS will change this to 'flex' */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 2000;
+    z-index: 1000;
 }
 
 #name, #context {
+    background: transparent;
+    border: 2px solid red;
     color: skyblue;
-    border: 3px double red;
-    background-color: transparent;
-    font-size: 18px;
-    height: 45px;
+    padding: 12px;
     width: 85%;
     max-width: 400px;
     margin-bottom: 20px;
-    padding: 10px;
+    font-size: 18px;
     outline: none;
 }
 
-#context {
-    border-color: mediumvioletred;
-    height: 100px;
-}
+#context { border-color: mediumvioletred; height: 100px; }
 
 .btn-group {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     width: 85%;
     max-width: 400px;
-    justify-content: center;
 }
 
 #enter, #remove {
@@ -72,65 +92,38 @@ body {
     padding: 12px;
     border: none;
     border-radius: 8px;
-    color: white;
     cursor: pointer;
+    color: white;
     font-weight: bold;
 }
 
 #enter { background-color: green; }
 #remove { background-color: red; }
 
-/* Note Container */
+/* Note Card */
 #container {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    width: 250px;
-    border-radius: 16px;
-    padding: 15px;
+    background: #111;
     border: 1px solid #333;
+    border-radius: 12px;
+    padding: 15px;
+    width: 280px;
     transition: 0.3s;
 }
 
-#container:hover { transform: scale(1.05); }
-
-h3 { color: red; font-size: 22px; margin-bottom: 5px; }
-p { color: white; font-size: 15px; margin-bottom: 10px; }
+#container h3 { color: red; margin-bottom: 8px; }
+#container p { font-size: 15px; margin-bottom: 12px; }
 
 .clr {
-    background-color: red;
+    background: red;
+    border: none;
     color: white;
-    border-radius: 8px;
     padding: 5px 15px;
-    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-/* Floating Button */
-#btn {
-    background-color: hotpink;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    font-size: 30px;
-    color: white;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s;
-}
-
-#btn:hover { transform: scale(1.2); }
-
-/* --- Media Queries for Mobile --- */
+/* Mobile Responsiveness */
 @media screen and (max-width: 600px) {
-    #ans { justify-content: center; }
-    #container { width: 90%; }
-    #btn { width: 55px; height: 55px; bottom: 20px; right: 20px; }
+    #btn { width: 55px; height: 55px; bottom: 20px; right: 20px; font-size: 28px; }
+    #ans { padding: 10px; }
 }
