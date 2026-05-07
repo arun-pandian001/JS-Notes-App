@@ -8,18 +8,18 @@ const addBtn = document.getElementById('btn');
 const enterBtn = document.getElementById('enter');
 const removeBtn = document.getElementById('remove');
 
-// Open Popup
+
 addBtn.addEventListener('click', () => {
     popup.style.display = "flex";
 });
 
-// Close Popup
+
 removeBtn.addEventListener('click', () => {
     popup.style.display = "none";
     clearInputs();
 });
 
-// Add Note
+
 enterBtn.addEventListener('click', () => {
     const author = nameInput.value.trim();
     const context = contextInput.value.trim();
@@ -31,7 +31,7 @@ enterBtn.addEventListener('click', () => {
 
     createNoteElement(author, context);
     
-    // Save to Array and LocalStorage
+   
     notesArray.push({ author, context });
     localStorage.setItem("Notes", JSON.stringify(notesArray));
     
@@ -43,9 +43,9 @@ function createNoteElement(N, C) {
     const card = document.createElement('div');
     card.setAttribute("id", "container");
     card.innerHTML = 
-        <h3>${N}</h3>
+        `<h3>${N}</h3>
         <p>${C}</p>
-        <button class="clr">Clear</button>
+        <button class="clr">Clear</button>`
     ;
     
     ansContainer.appendChild(card);
@@ -66,7 +66,7 @@ function clearInputs() {
     contextInput.value = "";
 }
 
-// Load existing notes on start
+
 window.onload = () => {
     notesArray.forEach(note => {
         createNoteElement(note.author, note.context);
