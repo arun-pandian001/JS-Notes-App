@@ -3,7 +3,7 @@ A lightweight application designed for fast note-taking, focusing on JavaScript 
 
 ## 🚀 Live Demo
 
-you can check out live version of this project here:[Amazon clone live link](https://amazon-clone-khaki-tau.vercel.app/)
+you can check out live version of this project here:[Notes App live link](https://js-notes-app-wine.vercel.app/)
 ---
 
 ### 🛠 Tech Stack
