@@ -1,6 +1,11 @@
 # 📓 Quick Notes App
 A lightweight application designed for fast note-taking, focusing on JavaScript Data Handling.
 
+## 🚀 Live Demo
+
+you can check out live version of this project here:[Amazon clone live link](https://amazon-clone-khaki-tau.vercel.app/)
+---
+
 ### 🛠 Tech Stack
 - HTML5: Page structure.
 - CSS3: Minimalist and clean UI.
